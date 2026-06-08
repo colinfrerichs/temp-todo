@@ -1,0 +1,11 @@
+.btn-container {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  color: #174ea6;
+  font-weight: 600;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

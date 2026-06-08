@@ -1,0 +1,42 @@
+input[type="text"],
+textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  border-radius: 0;
+  padding: 0.25rem 0;
+  color: inherit;
+  font: inherit;
+  outline: none;
+  transition: border-color 0.15s ease;
+  resize: none;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border-bottom-color: #174ea6;
+}
+
+.item-container {
+  display: flex;
+  gap: 0.9rem;
+}
+
+.item-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  width: 100%;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
