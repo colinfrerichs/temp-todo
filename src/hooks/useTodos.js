@@ -1,8 +1,21 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
+const STORAGE_KEY = "todos";
+
 export const useTodos = () => {
-    const [todoItems, setTodoItems] = useState([]);
+    const [todoItems, setTodoItems] = useState(() => {
+        try {
+            const stored = localStorage.getItem(STORAGE_KEY);
+            return stored ? JSON.parse(stored) : [];
+        } catch {
+            return [];
+        }
+    });
+
+    useEffect(() => {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(todoItems))
+    }, [todoItems])
 
     const activeTodos = todoItems.filter(item => !item.completed);
 
